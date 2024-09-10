@@ -14,12 +14,14 @@
         <a href="{{ url_for('home') }}">Home</a>
         {% if current_user.is_authenticated %}
             <a href="{{ url_for('account') }}">Account</a>
+            <a href="{{ url_for('edit_profile') }}">Edit Profile</a> <!-- Добавлено -->
             <a href="{{ url_for('logout') }}">Logout</a>
         {% else %}
             <a href="{{ url_for('login') }}">Login</a>
             <a href="{{ url_for('register') }}">Register</a>
         {% endif %}
     </nav>
+
 
     <div>
         {% with messages = get_flashed_messages(with_categories=true) %}
